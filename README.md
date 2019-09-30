@@ -30,3 +30,8 @@ This project developed by using TDD
             -> create mock user's input contain name, email, password
             -> using chai-http send post request with body mocked data
             -> check return status, message and no errors
+            -> run test -> failed
+        -> Fix by add new post /register route
+            -> check request body if either name or email or password is empty return error
+            -> otherwise return status 201 and errors empty
+            -> run test -> passed

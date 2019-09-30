@@ -27,12 +27,12 @@ describe('User registration', () => {
             'email': 'john@wick.com',
             'password': 'secret'
         }
+        
         chai.request(app).post('/register').send(new_user).then(res => {
             expect(res).to.have.status(201);
             expect(res.body.message).to.be.equal('User created!');
             expect(res.body.errors.length).to.be.equal(0);
             done();
         }).catch(error => console.log(error.message));
-        
     });
 });
