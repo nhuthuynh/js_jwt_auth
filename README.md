@@ -16,3 +16,10 @@ This project developed by using TDD
         GET - /profile -> request user profile, need a valid token - private
     
     In mocha, describe() function used to group unit tests from a specific domain/feature and each one is defined in it() function
+    chai-http allows use to create request to our server
+
+    1. Empty project 
+        -> Create a simple test to check express is existed -> run test -> failed.
+        -> Fix by add app.js in src folder and import express, init express instance and export, run test -> passed.
+    2. Create simplest public route
+        -> Create a test to check GET request for route api / -> run test -> failed.
