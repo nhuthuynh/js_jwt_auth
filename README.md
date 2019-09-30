@@ -23,3 +23,4 @@ This project developed by using TDD
         -> Fix by add app.js in src folder and import express, init express instance and export, run test -> passed.
     2. Create simplest public route
         -> Create a test to check GET request for route api / -> run test -> failed.
+        -> Fix by add middleware bodyParser and GET endpoint, run test -> passed.
