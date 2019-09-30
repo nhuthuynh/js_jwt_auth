@@ -24,3 +24,9 @@ This project developed by using TDD
     2. Create simplest public route
         -> Create a test to check GET request for route api / -> run test -> failed.
         -> Fix by add middleware bodyParser and GET endpoint, run test -> passed.
+    3. Create /register endpoint
+        -> Create a happy case test to check POST request to route /register with body contain name, email, password
+            -> create new group test for this endpoint
+            -> create mock user's input contain name, email, password
+            -> using chai-http send post request with body mocked data
+            -> check return status, message and no errors

@@ -19,3 +19,20 @@ describe('App', () => {
             }).catch(error => console.log(`error: ${error.message}`));
     })
 });
+
+describe('User registration', () => {
+    it('POST / should return 201 and confirmation for valid input', done => {
+        const new_user = {
+            'name': 'John Wick',
+            'email': 'john@wick.com',
+            'password': 'secret'
+        }
+        chai.request(app).post('/register').send(new_user).then(res => {
+            expect(res).to.have.status(201);
+            expect(res.body.message).to.be.equal('User created!');
+            expect(res.body.errors.length).to.be.equal(0);
+            done();
+        }).catch(error => console.log(error.message));
+        
+    });
+});
