@@ -35,4 +35,25 @@ describe('User registration', () => {
             done();
         }).catch(error => console.log(error.message));
     });
+
+    // will add more test checking user exist, password, email valid
+});
+
+describe('User login', () => {
+    it('should return 200 and a token for valid credentials', done => {
+        const mock_input = {
+            'email': 'steve.roger@avenger.com',
+            'password': 'assemble'
+        }
+
+        chai.request(app).post('/login')
+            .send(mock_input)
+            .then(res => {
+                expect(res).to.have.status(200);
+                expect(res.body.token).to.exist;
+                expect(res.body.message).to.be.equal("Logged in success.");
+                expect(res.body.errors.length).to.be.equal(0);
+                done();
+            }).catch( ({ message = '' }) => console.log(message));
+    });
 });

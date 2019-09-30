@@ -7,6 +7,7 @@ This project developed by using TDD
     6. jsonwebtoken -> to generate JWT
     7. morgan -> logging coming requests
     8. nodemon -> to auto restart server automatically when files change (optional)
+    9. dotenv -> store keys in .env file for secure
 
     ------------------------------------------------------------------------------------------------
     create express based API which handling requests to store new users, authenticate and return valid token (JWT) using to protect private routes for our app.
@@ -17,6 +18,7 @@ This project developed by using TDD
     
     In mocha, describe() function used to group unit tests from a specific domain/feature and each one is defined in it() function
     chai-http allows use to create request to our server
+    jsonwebtoken providing jwt.sign(payload, key, options) generate the tokens for our authentication information, payload is information we want to protect, key is value to use to encode payload, options is configuration susch as expired time. Key is important information and should not be exposed directly in out code, we will store it in our .env file
 
     1. Empty project 
         -> Create a simple test to check express is existed -> run test -> failed.
@@ -35,3 +37,11 @@ This project developed by using TDD
             -> check request body if either name or email or password is empty return error
             -> otherwise return status 201 and errors empty
             -> run test -> passed
+    4. Create /login endpoint
+        -> Create a test to test post request to /login endpoint
+        -> Test expect status code 200, a message, and a JWT token
+            -> Run test -> failed
+            -> Create login endpoint
+            -> Rune test -> failed
+            -> Add logic for login, check user input and return state 200, message, token
+            -> Run test -> passed
