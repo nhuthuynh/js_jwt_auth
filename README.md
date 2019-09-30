@@ -8,4 +8,11 @@ This project developed by using TDD
     7. morgan -> logging coming requests
     8. nodemon -> to auto restart server automatically when files change (optional)
 
+    ------------------------------------------------------------------------------------------------
+    create express based API which handling requests to store new users, authenticate and return valid token (JWT) using to protect private routes for our app.
+        GET - / -> return simple message - public
+        POST - /register -> create new user in database - public
+        POST - /login -> validate user and return token - public
+        GET - /profile -> request user profile, need a valid token - private
     
+    In mocha, describe() function used to group unit tests from a specific domain/feature and each one is defined in it() function

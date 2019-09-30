@@ -1,9 +1,10 @@
-const assert = require('assert');
+const chai = require('chai');
+const expect = chai.expect;
 
-describe('Array', () => {
-    describe('#indexOf()', () => {
-        it('should return -1 when the value is not present', () => {
-            assert.equal([1, 2, 3].indexOf(4), -1)
-        });
+const app = require('../src/app');
+
+describe('App', () => {
+    it('should exists ', () => {
+        expect(app).to.be.a('function');
     });
 });
